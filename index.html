@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GERyX — Streetwear</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#fff;font-family:Arial,sans-serif}
+header{padding:20px;text-align:center;border-bottom:1px solid #333}
+.logo{font-size:38px;font-weight:900;letter-spacing:4px}
+.x{color:#e00000}
+nav a{color:#fff;text-decoration:none;margin:0 10px;font-size:14px}
+.hero{text-align:center;padding:80px 20px;background:linear-gradient(135deg,#080808,#260000)}
+.hero h1{font-size:58px;margin:0;font-weight:900;letter-spacing:6px}
+.hero p{color:#ddd;letter-spacing:3px}
+button{background:#e00000;color:white;border:0;padding:12px 22px;font-weight:bold;cursor:pointer}
+section{padding:45px 20px;max-width:1000px;margin:auto}
+h2{text-align:center;font-size:32px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#151515;padding:25px;text-align:center;border:1px solid #333}
+.card .shirt{font-size:80px}
+.price{font-size:20px;margin:15px}
+.about{text-align:center;color:#ccc;line-height:1.6}
+footer{text-align:center;padding:30px;border-top:1px solid #333;color:#888}
+.cart{position:fixed;right:15px;top:15px;background:#e00000;padding:10px 15px;font-weight:bold}
+</style>
+</head>
+<body>
+
+<div class="cart">🛒 <span id="cart">0</span></div>
+
+<header>
+<div class="logo">GER<span class="x">yX</span></div>
+<nav>
+<a href="#shop">SHOP</a>
+<a href="#rolunk">RÓLUNK</a>
+<a href="#kapcsolat">KAPCSOLAT</a>
+</nav>
+</header>
+
+<div class="hero">
+<h1>GER<span class="x">yX</span></h1>
+<p>ENERGY • SPEED • ACTION</p>
+<button onclick="location.href='#shop'">FELFEDEZEM</button>
+</div>
+
+<section id="shop">
+<h2>SHOP</h2>
+<div class="products">
+
+<div class="card">
+<div class="shirt">👕</div>
+<h3>GERyX T-Shirt</h3>
+<div class="price">8 990 Ft</div>
+<button onclick="add()">KOSÁRBA</button>
+</div>
+
+<div class="card">
+<div class="shirt">🧥</div>
+<h3>GERyX Hoodie</h3>
+<div class="price">18 990 Ft</div>
+<button onclick="add()">KOSÁRBA</button>
+</div>
+
+<div class="card">
+<div class="shirt">🧢</div>
+<h3>GERyX Cap</h3>
+<div class="price">6 990 Ft</div>
+<button onclick="add()">KOSÁRBA</button>
+</div>
+
+</div>
+</section>
+
+<section id="rolunk">
+<h2>RÓLUNK</h2>
+<p class="about">
+A GERyX egy fiatalos streetwear márka, amelyet Gergő és Krisz közösen épít.
+ENERGY • SPEED • ACTION — ez a GERyX életérzése.
+</p>
+</section>
+
+<section id="kapcsolat">
+<h2>KAPCSOLAT</h2>
+<p class="about">Írj nekünk: geryx@example.com</p>
+</section>
+
+<footer>© 2026 GERyX — ENERGY • SPEED • ACTION</footer>
+
+<script>
+let cart=0;
+function add(){
+cart++;
+document.getElementById("cart").textContent=cart;
+}
+</script>
+
+</body>
+  </html>
