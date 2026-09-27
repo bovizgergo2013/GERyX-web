@@ -28,7 +28,7 @@ footer{text-align:center;padding:30px;border-top:1px solid #333;color:#888}
 </head>
 <body>
 
-<div class="cart">🛒 <span id="cart">0</span></div>
+<div class="cart" onclick="openCart()">🛒 <span id="cart">0</span></div>
 
 <header>
 <div class="logo">GER<span class="x">yX</span></div>
@@ -43,6 +43,13 @@ footer{text-align:center;padding:30px;border-top:1px solid #333;color:#888}
 <h1>GER<span class="x">yX</span></h1>
 <p>ENERGY • SPEED • ACTION</p>
 <button onclick="location.href='#shop'">FELFEDEZEM</button>
+</div>
+
+<div id="cartBox" style="display:none;position:fixed;top:60px;right:15px;background:#151515;border:1px solid #555;padding:20px;z-index:1000;width:300px;">
+  <h2>KOSÁR</h2>
+  <div id="cartItems"></div>
+  <p>Végösszeg: <strong id="total">0 Ft</strong></p>
+  <button onclick="closeCart()">BEZÁR</button>
 </div>
 
 <section id="shop">
