@@ -59,6 +59,12 @@ footer{text-align:center;padding:30px;border-top:1px solid #333;color:#888}
 <div class="card">
 <div class="shirt">👕</div>
 <h3>GERyX T-Shirt</h3>
+<select class="size">
+  <option value="S">S</option>
+  <option value="M" selected>M</option>
+  <option value="L">L</option>
+  <option value="XL">XL</option>
+</select>
 <div class="price">8 990 Ft</div>
 <button onclick="add()">KOSÁRBA</button>
 </div>
@@ -66,6 +72,12 @@ footer{text-align:center;padding:30px;border-top:1px solid #333;color:#888}
 <div class="card">
 <div class="shirt">🧥</div>
 <h3>GERyX Hoodie</h3>
+<select class="size">
+  <option value="S">S</option>
+  <option value="M" selected>M</option>
+  <option value="L">L</option>
+  <option value="XL">XL</option>
+</select>
 <div class="price">18 990 Ft</div>
 <button onclick="add()">KOSÁRBA</button>
 </div>
@@ -83,7 +95,7 @@ footer{text-align:center;padding:30px;border-top:1px solid #333;color:#888}
 <section id="rolunk">
 <h2>RÓLUNK</h2>
 <p class="about">
-A GERyX egy fiatalos streetwear márka, amelyet Gergő és Krisz közösen épít.
+A GERyX egy fiatalos streetwear márka, amelyet két fiatal közösen épít.
 ENERGY • SPEED • ACTION — ez a GERyX életérzése.
 </p>
 </section>
@@ -105,7 +117,12 @@ function add() {
   const priceText = card.querySelector(".price").textContent;
   const price = parseInt(priceText.replace(/\D/g, ""));
 
-  const existing = cart.find(item => item.name === name);
+  const sizeSelect = card.querySelector(".size");
+  const size = sizeSelect ? sizeSelect.value : "Egy méret";
+
+  const existing = cart.find(
+    item => item.name === name && item.size === size
+  );
 
   if (existing) {
     existing.quantity++;
@@ -113,6 +130,7 @@ function add() {
     cart.push({
       name: name,
       price: price,
+      size: size,
       quantity: 1
     });
   }
@@ -137,6 +155,7 @@ function updateCart() {
     items.innerHTML += `
       <div style="margin-bottom:15px;border-bottom:1px solid #444;padding-bottom:10px;">
         <strong>${item.name}</strong><br>
+        Méret: ${item.size}<br>
         ${item.price.toLocaleString("hu-HU")} Ft × ${item.quantity}
         <br>
         <button onclick="changeQuantity(${index}, -1)">−</button>
