@@ -49,6 +49,7 @@ footer{text-align:center;padding:30px;border-top:1px solid #333;color:#888}
   <h2>KOSÁR</h2>
   <div id="cartItems"></div>
   <p>Végösszeg: <strong id="total">0 Ft</strong></p>
+  <button onclick="openOrder()">MEGRENDELÉS</button>
   <button onclick="closeCart()">BEZÁR</button>
 </div>
 
@@ -187,6 +188,13 @@ function openCart() {
   updateCart();
   document.getElementById("cartBox").style.display = "block";
 }
+
+function openOrder() {
+  document.getElementById("orderBox").style.display = "block";
+}
+
+
+
 
 function closeCart() {
   document.getElementById("cartBox").style.display = "none";
